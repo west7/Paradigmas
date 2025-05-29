@@ -21,7 +21,8 @@ $$
 f(x) \space |ˣ \space g(x) \equiv \forall x [\neg f(x) \lor \neg g(x) ] \equiv \neg \forall x [f(x)\space \& \space g(x)] 
 $$
 
-> ~A = A |ˣ A 
+> [!analysis] 
+~A = A |ˣ A 
 > A V B = (x)(A V B) = ~A  |ˣ ~B = (A |ˣ A) |ˣ (B |ˣ B)
 
 
