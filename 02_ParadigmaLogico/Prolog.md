@@ -12,27 +12,24 @@ Como dito anteriormente, o Prolog é baseado em predicados. Um predicado é uma 
 2. Regras -> Define relações lógicas entre fatos e outros predicados.
 3. Consultas -> Perguntas feitas ao Prolog para obter informações com base nos fatos e regras definidas.
 
-```tabs
+````tabs
 
-tab: Fato 
+tab: Fato
 > Sintaxe básica para um fato
 
 ```prolog
 fato(argumento1, argumento2, ..., argumentoN).
-
 tab: Regra
 > Sintaxe básica para uma regra
 
 ```prolog
 regra(Argumento1, Argumento2) :- condicao1, condicao2.
-
 tab: Consulta
 > Sintaxe básica para uma consulta
 
 ```prolog
 ?- consulta(argumento1, argumento2).
-
-```
+````
 
 Argumentos podem ser quaisquer termos válidos em prolog. 
 ## Termos 

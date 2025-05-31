@@ -67,7 +67,7 @@ A redução η é uma forma de simplificação que se aplica a funções. Ela af
 
 Sendo um sistema lógico, o cálculo λ possui apenas dois termos primitivos: o lambda (λ) e o ponto (.). Os [[Lambda Calculus#Termos λ|axiomas de construção]] permitem a definição de termos mais complexos a partir destes dois termos primitivos.  
 
->[!analysis] 
+>[!analysis]+
 >
 > #### Verdadeiro e Falso
 > 

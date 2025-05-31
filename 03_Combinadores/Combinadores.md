@@ -10,7 +10,6 @@ A lógica combinatória foi introduzida por [Moses Schönfinkel](https://pt.wiki
 
 O conectivo fundamental de Schönfinkel é uma evolução do conectivo de Scheffer. O conectivo de Scheffer (↑ ou |), conhecido como negação disjunta (NAND), reduziu toda a lógica proposicional booleana a apenas um conectivo. 
 
-> [!analysis] 
 > P & Q ≡ (P | Q) | (P | Q)
 > P V Q ≡ (P | P) | (Q | Q)
 > ~P ≡ P | P
@@ -21,8 +20,7 @@ $$
 f(x) \space |ˣ \space g(x) \equiv \forall x [\neg f(x) \lor \neg g(x) ] \equiv \neg \forall x [f(x)\space \& \space g(x)] 
 $$
 
-> [!analysis] 
-~A = A |ˣ A 
+> ~A = A |ˣ A 
 > A V B = (x)(A V B) = ~A  |ˣ ~B = (A |ˣ A) |ˣ (B |ˣ B)
 
 
