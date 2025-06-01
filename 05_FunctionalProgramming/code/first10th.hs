@@ -1,3 +1,4 @@
+import Control.Applicative (Alternative(empty))
 --      99 Problems Haskell        --
 --      First 10th problems        --
 
@@ -17,8 +18,10 @@ elementAt list i
   | length list < i = Nothing
   | otherwise = Just (head $ drop (i - 1) list)
 
---  Alternatively use the !! operator:
---      elementAt2 list i = list !! (i - 1)
+{--  
+    Alternatively use the !! operator:  
+    elementAt2 list i = list !! (i - 1) 
+--}
 
 -- 4. Length of a list --
 myLenght :: [a] -> Int
@@ -35,9 +38,16 @@ myReverse list = foldl (\x y -> y : x) [] list
 -- 3 : [2, 1] = [3, 2, 1]
 
 -- 6. Find out whether a list is a palindrome. A palindrome can be read forward or backward; e.g. "xamax". --
-isPalindrome :: (Eq a) => [a] -> Bool
+isPalindrome :: Eq a => [a] -> Bool
 isPalindrome [] = False
 isPalindrome list
   | list == myReverse list = True
   | otherwise = False
 
+-- 7. Flatten a nested list structure --
+data NestedList a = Elem a | List [NestedList a]
+
+flatten :: NestedList a -> [a]
+flatten (List []) = []
+flatten (Elem x) = [x]
+flatten (List (x:xs)) = flatten x ++ flatten (List xs)   
