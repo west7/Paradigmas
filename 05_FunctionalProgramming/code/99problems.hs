@@ -1,4 +1,3 @@
-import Control.Applicative (Alternative(empty))
 --      99 Problems Haskell        --
 --      First 10th problems        --
 
@@ -51,3 +50,24 @@ flatten :: NestedList a -> [a]
 flatten (List []) = []
 flatten (Elem x) = [x]
 flatten (List (x:xs)) = flatten x ++ flatten (List xs)   
+
+-- 8. Eliminate Duplicate elements in a list --
+compress :: Eq a => [a] -> [a]
+compress [] = []
+compress [x] = [x]
+compress (x:xs) 
+  | x == head xs = compress xs
+  | otherwise = x : compress xs
+
+-- 9. Pack Duplicates in a list --
+pack :: Eq a => [a] -> [[a]]
+pack [] = []
+pack (x:xs) = 
+  let (firstGroup, rest) = span (== x) xs
+  in (x:firstGroup) : pack rest
+
+-- 10. Run-length encoding of a list -- 
+encode :: Eq a => [a] -> [(Int, a)]
+encode [] = []
+encode xs = map (\ys -> (length ys, head ys)) (pack xs) 
+
