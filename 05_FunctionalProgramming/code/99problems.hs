@@ -29,7 +29,7 @@ myLenght (x : xs) = 1 + myLenght xs
 
 -- 5. Reverse a list --
 myReverse :: [a] -> [a]
-myReverse list = foldl (\x y -> y : x) [] list
+myReverse = foldl (\x y -> y : x) []
 
 -- [1,2,3]
 -- 1 : [] = [1]
