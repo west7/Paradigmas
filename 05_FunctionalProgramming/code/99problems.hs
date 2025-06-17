@@ -1,3 +1,4 @@
+import Distribution.Simple.Utils (xargs)
 --      99 Problems Haskell        --
 --      First 10th problems        --
 
@@ -70,4 +71,17 @@ pack (x:xs) =
 encode :: Eq a => [a] -> [(Int, a)]
 encode [] = []
 encode xs = map (\ys -> (length ys, head ys)) (pack xs) 
+
+-- 11. Modified run-length encoding --
+data Encoding a = Single a | Multiple Int a deriving Show
+encodeModified :: Eq a => [a] -> [Encoding a]
+encodeModified [] = []
+encodeModified xs = map (\ys -> if length ys == 1 then Single (head ys) else Multiple (length ys) (head ys)) (pack xs)
+
+-- 12. Decode a run-length encoded list --
+decodeModified :: [Encoding a] -> [a]
+decodeModified [] = []
+decodeModified (Single a : xs) = a : decodeModified xs
+decodeModified (Multiple n a : xs) = replicate n a ++ decodeModified xs
+  
 
