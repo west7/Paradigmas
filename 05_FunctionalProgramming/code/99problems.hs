@@ -1,4 +1,3 @@
-import Distribution.Simple.Utils (xargs)
 --      99 Problems Haskell        --
 --      First 10th problems        --
 
@@ -84,4 +83,40 @@ decodeModified [] = []
 decodeModified (Single a : xs) = a : decodeModified xs
 decodeModified (Multiple n a : xs) = replicate n a ++ decodeModified xs
   
+-- 13. Run-length encoding of a list (direct solution) --
+encodeDirect :: Eq a => [a] -> [Encoding a]
+encodeDirect [] = []
+encodeDirect (x:xs) 
+  | count == 1 = Single x : encodeDirect xs 
+  | otherwise  = Multiple count x : encodeDirect rest 
+  where 
+    (matched, rest) = span (==x) xs
+    count = 1 + length matched
 
+-- 14. Duplicate elements in a list --
+dupli :: [a] -> [a]
+dupli [] = []
+dupli (x:xs) = replicate 2 x ++ dupli xs
+
+-- 15. Replicate the elements of a list a given number of times. --
+repli :: [a] -> Int -> [a]
+repli xs n = foldr ((++) . replicate n) [] xs 
+
+-- 16. Drop every nth element of a list --
+dropEvery :: [a] -> Int -> [a]
+dropEvery xs n = map snd $ filter (\(i, _) -> i `mod` n /= 0) $ zip [1..] xs
+
+{-- 
+dropEvery xs n = [x | (i, x) <- zip [1 ..] xs, i `mod` n /= 0]
+
+Sintaxe de List Comprehension em Haskell: [expressão | geradores e filtros ]
+Construa uma nova lista usando x, onde x satisfaz: o par (i, x) em que i é o nth elemento de [1..] e x é o nth elemento de xs, e i não pode ser múltiplo de n
+--}
+
+-- 17. Split a list into two parts; the length of the first part is given. --
+split :: [a] -> Int -> ([a], [a])
+split xs n = (take n xs, drop n xs)
+
+-- 18. Extract a slice from a list. --
+slice :: [a] -> Int -> Int -> [a]
+slice xs i k = drop (i - 1) $ take k xs 
