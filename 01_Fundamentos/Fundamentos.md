@@ -32,6 +32,12 @@
 > **Subconjuntos**
 > Se *A* é um conjunto, *B* é subconjunto de *A*, somente se, para qualquer *b* ∈ *B*, b ∈ A. *B ⊂ A*.
 
+> **Cardinalidade**
+> Refere-se ao "tamanho" de um conjunto, o número de elementos que ele contém.
+
+### Teorema de Cantor
+O Teorema de cantor afirma que: o conjunto de todas as partes (conjunto dos subconjuntos) de um conjunto tem uma cardinalidade maior que o próprio conjunto.   
+
 ## Funções
 
 > **Produto Cartesiano**
@@ -66,3 +72,19 @@ f: A -> B
 1. f é ==injetora== se f(x) = f(y) implica x = y, $\forall$ x,y ∈ A. Ou seja, para um elemento de f(A), existe apenas um a ∈ A que mapeia para um elemento em f(A).
 2. f é ==sobrejetora== se Imagem = f(A) = B. Ou seja, todos os elementos do contradomínio pertencem a imagem.
 3. f é ==bijetora== se é injetora e sobrejetora.
+
+```tabs
+
+tab: Injetiva
+![Injetiva](../Excalidraw/Injetiva.svg)
+
+tab: Sobrejetiva
+![Sobrejetiva](../Excalidraw/Sobrejetiva.svg)
+
+tab: Bijetiva
+![Bijetiva](../Excalidraw/Bijetiva.svg)
+```
+
+### Funções total e parcial
+
+Uma função f: D -> B, é denominada ==parcial== de A em B, se o domínio D ⊂ A. Em outras palavras, é uma função que não mapeia todos os elementos de seu domínio. Se D = A, então f é ==total==.
